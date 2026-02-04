@@ -2,184 +2,169 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="wispanh=device-wispanh, initial-scale=1.0">
-    <title>Astra Editor - 基于TurboWarp的二创编辑器</title>
-    <link rel="stylesheet" href="src/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AstraEditor - 实用无上限</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="./Logo.png" type="image/x-icon">
 </head>
 
 <body>
-    <!-- 蓝图背景动画 -->
-    <div id="blueprint-background" class="blueprint-background">
-        <div class="blueprint-grid">
-            <div class="blueprint-lines"></div>
-        </div>
-    </div>
+	<div class="blueprint-bg"></div>
+	<div class="tab">
+		<img src="./fulllogo.png" alt="logo" id="tabLogo">
+		<div class="tabButtonTab">
+			<button type="button" class="tabButton" data-page="home">首页</button>
+			<button type="button" class="tabButton" data-page="changelog">日志</button>
+			<button type="button" class="tabButton" onclick="onlinkDesktop()">下载</button>
+			<!--data-page="download"-->
+			<button type="button" class="tabButton" onclick="onlinkO()">仓库</button>
+			<!--data-page="repository" -->
+		</div>
+	</div>
+	<div class="content">
+		<!-- 首页 -->
+		<div class="page" id="page-home" data-page="home">
+			<div class="titleShow">
+				<img src="./fulllogo.png" alt="errorImageLoad" class="LogoTitle"></img><br />
+				<span class="slogan">一把称职的锤子，而不是一朵鲜艳的玫瑰。</span>
+				<div class="p3d">
+					<img src="./show.jpeg" alt="errorImageLoad" class="TitleShowPho">
+				</div>
+				<div>
+					<script>
+						function onlinkLink() {
+							window.location.href = './build/editor.html'
+						}
+						function onlinkDesktop() {
+							window.location.href = 'https://github.com/AstraEditor/Desktop/releases'
+						}
+						function onlinkO() {
+							window.location.href = 'https://github.com/AstraEditor'
+						}
+					</script>
+					<button type="button" class="OnlineButton" onclick="onlinkLink()">在线使用</button>
+					<button type="button" class="DesktopButton"
+						onclick="onlinkDesktop()">下载桌面端</button>
+				</div>
+			</div>
 
-    <!-- 主网站内容 -->
-    <div id="main-content" class="main-content">
-        <!-- 简洁主页 -->
-        <div class="hero-center">
-            <div class="center-logo">
-                <img src="src/fulllogo.png" alt="Astra Editor">
-            </div>
-        </div>
-    </div>
+			<div class="features">
+				<div class="backgroundF"></div>
+				<span class="titleF">我们认为第二好的TurboWarp二创编辑器。</span>
+				<small>*这句话旨在致敬Smartisan，无任何实际意义。</small><br>
+				<span class="titleFintor">AstraEditor 为TurboWarp增加了更多不曾有的新功能</span>
 
-    <!-- 内容区域 -->
-    <div class="content-section">
-        <div class="black-overlay"></div>
-        <div class="content-container">
-            <!-- 下载部分 - 移到最上面 -->
-            <section class="download-section">
-                <h2>开始使用</h2>
-                <div class="download-buttons">
-                    <button class="download-btn primary">下载桌面版</button>
-                    <button class="download-btn secondary" id="online-version-btn">使用在线版</button>
-                </div>
-            </section>
+				<div class="featureCards">
+					<div class="featureCard" id="readme">
+						<div class="featureTitle">README</div>
+						<div class="featureDesc">
+							<p>
+								你可以在一个新注释内以“#README”开头，并也可通过以空格为分割追加“#[标题]”
+								来控制README窗口显示的标题。添加成功后，上方会自动出现一个“README”按钮。
+								<br><br>
+								你还可以将角色名改为“README”，AstraEditor可在加载项目后自动跳出这个角色的README
+							</p>
+						</div>
+					</div>
+					<div class="featureCard" id="ext">
+						<div class="featureTitle">扩展管理器</div>
+						<div class="featureDesc">
+							<p>
+								它可以显示现在已加载的所有扩展，并可以进行“预览” “删除” “导出”操作。<br>
+								预览——你将可以查看这个扩展包含的积木，这在“加载自定义扩展”内同样拥有。<br>
+								删除——你可以删除这个扩展，若作品使用了这个扩展，它会警告您是否删除，若同意，它会删除掉所有使用扩展的积木并删除扩展。<br>
+								导出——你可以导出这个扩展，以便在别的项目使用。<br>
+							</p>
+						</div>
+					</div>
+					<div class="featureCard" id="flyout">
+						<div class="featureTitle">Flyout</div>
+						<div class="featureDesc">
+							<p>
+								如果扩展的积木过长，让你感到困惑，你可以拖动flyout的边缘修改它的宽度<br>
+							</p>
+						</div>
+					</div>
+					<div class="featureCard" id="theme">
+						<div class="featureTitle">主题色</div>
+						<div class="featureDesc">
+							<p>
+								是否厌烦了那几个预设的颜色，想使用自己喜欢的颜色？
+								此功能可以满足你的需求！
+							</p>
+						</div>
+					</div>
+					<div class="featureCard" id="addon">
+						<div class="featureTitle">更多插件</div>
+						<div class="featureDesc">
+							<p>
+								我们制作了更多插件，来优化您的使用体验。
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="Update">
+				<span class="updateT">持续更新</span>
+				<span class="updateTIn">AstraEditor在持续更新，未来将会加入更多功能。</span>
+				<ul class="updateTL">
+					<li>作品分析</li>
+					<li>更棒的造型编辑</li>
+					<li>更棒的声音编辑</li>
+					<li>渲染优化</li>
+					<li>造型声音的拖拽</li>
+					<li>联机？</li>
+				</ul>
+				<div class="ubgd">
+					<img src="./updatelist.jpeg" alt="updateBG" class="ubg">
+				</div>
+			</div>
+		</div>
 
-            <!-- 关于部分 -->
-            <!-- <section class="about-section">
-                <h2>关于 Astra Editor</h2>
-                <p>Astra Editor 是基于 TurboWarp 打造的二创编辑器，为创作者提供更强大的工具和更流畅的体验。我们致力于为 Scratch 社区提供更好的创作平台。</p>
-                <div class="about-highlights">
-                    <div class="highlight-item">
-                        <h4>创新设计</h4>
-                        <p>更改的用户界面，让创作更加直观</p>
-                    </div>
-                    <div class="highlight-item">
-                        <h4>极速性能</h4>
-                        <p>优化的编译引擎，运行速度提升数倍</p>
-                    </div>
-                    <div class="highlight-item">
-                        <h4>跨平台</h4>
-                        <p>支持 Windows、Mac、Linux 和 Web 平台</p>
-                    </div>
-                </div>
-            </section> -->
+		<!-- 日志页面 -->
+		<div class="page" id="page-changelog" data-page="changelog" style="display: none;">
+			<div class="changelog-container">
+				<h1 class="page-title">更新日志</h1>
+				<p class="page-placeholder">还未发布...</p>
+			</div>
+		</div>
 
-            <!-- 特性展示 -->
-            <!-- <section class="features-section">
-                <h2>核心特性</h2>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <h3>🚀 TurboWarp 内核</h3>
-                        <p>基于成熟的 TurboWarp 引擎，确保稳定性和性能</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>✨ 增强功能</h3>
-                        <p>在原版基础上添加更多创作工具和功能</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>🎯 创作者友好</h3>
-                        <p>专为内容创作者优化的工作流程</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>🔄 持续更新</h3>
-                        <p>活跃开发，定期推出新功能</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>🔧 自定义扩展</h3>
-                        <p>支持插件系统，按需扩展功能</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>📱 云端同步</h3>
-                        <p>项目自动保存，多设备无缝切换</p>
-                    </div>
-                </div>
-            </section> -->
+		<!-- 下载页面 -->
+		<div class="page" id="page-download" data-page="download" style="display: none;">
+			<div class="download-container">
+				<h1 class="page-title">下载</h1>
+				<p class="page-placeholder">下载内容待添加...</p>
+			</div>
+		</div>
 
-            <!-- 版本对比 -->
-            <!-- <section class="comparison-section">
-                <h2>版本对比</h2>
-                <div class="comparison-table">
-                    <div class="comparison-item">
-                        <h3>桌面版</h3>
-                        <ul>
-                            <li>✓ 本地运行，无需网络</li>
-                            <li>✓ 更快的编译速度</li>
-                            <li>✓ 支持大项目</li>
-                            <li>✓ 高级调试工具</li>
-                        </ul>
-                    </div>
-                    <div class="comparison-item">
-                        <h3>在线版</h3>
-                        <ul>
-                            <li>✓ 无需安装</li>
-                            <li>✓ 自动云端保存</li>
-                            <li>✓ 实时协作</li>
-                            <li>✓ 跨平台访问</li>
-                        </ul>
-                    </div>
-                </div>
-            </section> -->
+	</div>
+	<div class="end">
+		<div>
+			<img src="./fulllogo.png" alt="updateBG" class="endlogo"><br>
+			<span class="endby">来自 AstraEditor 项目组</span><br>
+			<span class="introend">
+				本项目基于 TurboWarp 构建，但与 TurboWarp 项目组无关系。<br>
+				所有更新的功能均为自制，如有雷同，纯属巧合
 
-            <!-- 系统要求 -->
-            <!-- <section class="requirements-section">
-                <h2>系统要求</h2>
-                <div class="requirements-grid">
-                    <div class="requirement-item">
-                        <h4>Windows</h4>
-                        <p>Windows 10 或更高版本</p>
-                    </div>
-                    <div class="requirement-item">
-                        <h4>macOS</h4>
-                        <p>macOS 10.14 或更高版本</p>
-                    </div>
-                    <div class="requirement-item">
-                        <h4>Linux</h4>
-                        <p>Ubuntu 18.04+ 或其他主流发行版</p>
-                    </div>
-                    <div class="requirement-item">
-                        <h4>Web</h4>
-                        <p>Chrome 90+、Firefox 88+、Safari 14+</p>
-                    </div>
-                </div>
-            </section> -->
-            <!--
-            1. 修改modal使其更像一个窗口
-                - 添加 “最大化”“最小化”
-                - 扩展界面不会全屏
-                - 可堆叠
-            2. 添加主题-“自定义”
-                - 现在可以自定义主题了
-                - 仅需选择三种颜色，即可应用您喜欢的主题颜色
-            3. 修复问题
-                - 修复Modal图层问题
-
-            -->
-            <section class="update">
-                <h2>2025/12/4 Update:</h2>
-                    <span class="updateTitle">修改modal使其更像一个窗口</span><br/>
-                    <span>添加 “最大化”“最小化”</span><br />
-                    <span>扩展界面不会全屏</span><br />
-                    <span>可堆叠</span><br />
-                    <span class="updateTitle">添加主题-“自定义”</span><br />
-                    <span>现在可以自定义主题了</span><br />
-                    <span>仅需选择三种颜色，即可应用您喜欢的主题颜色</span><br />
-                    <span class="updateTitle">修复问题</span><br />
-                    <span>修复Modal图层问题</span>
-            </section>
-
-
-            <!-- 页脚 -->
-            <footer class="content-footer">
-                <div class="footer-links">
-                    <a href="https://www.gitHub.com/AstraEditor">GitHub</a>
-                    <a href="#">社区</a>
-                    <a href="#">反馈</a>
-                </div>
-                <p>&copy; 2025 Astra Editor. 基于 TurboWarp 构建.</p>
-            </footer>
-        </div>
-    </div>
-
-    <script src="src/translations.js"></script>
-    <script src="src/index.js"></script>
-    <script>
-           window.location.href = "https://www.astras.top";
-    </script>
+			</span>
+		</div>
+		<div>
+			<span class="link">更多链接</span><br>
+			<div style="display: flex;margin: 10px;">
+				<a class="iconLinkB" href="https://space.bilibili.com/3691007061264515">
+					<img class="iconLink" src="./bilibili.svg" alt="bilibili">
+				</a>
+				<a class="iconLinkB" href="https://qm.qq.com/q/u2GpAwB5o6">
+					<img class="iconLink" src="./qq.png" alt="qq">
+				</a>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<span class="footerT">©2026 AstraEditor项目组。保留所有权利。</span>
+	</footer>
 </body>
+<script src="js/main.js"></script>
 
 </html>

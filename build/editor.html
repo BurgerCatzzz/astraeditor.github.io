@@ -1,4 +1,18 @@
-<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google" value="notranslate"><meta name="description" content="Astra Editor is a Scratch mod with a compiler to run projects faster, dark mode for your eyes, a bunch of addons to improve the editor, and more."/><title>Astra Editor - Run Scratch projects faster</title><link rel="apple-touch-icon" href="images/apple-touch-icon.png"><link rel="manifest" href="manifest.webmanifest"><style>.splash-screen {
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google" value="notranslate">
+    <meta name="description" content="AstraEditor is a Scratch mod with a compiler to run projects faster, dark mode for your eyes, a bunch of addons to improve the editor, and more." />
+    <title>AstraEditor - Run Scratch projects faster</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+      <link rel="manifest" href="manifest.webmanifest">
+    
+    <style>
+      .splash-screen {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -59,7 +73,29 @@
       }
       .splash-reset:disabled {
         opacity: 0.8;
-      }</style></head><body><noscript><div class="splash-screen"><div><h1>Astra Editor requires JavaScript</h1><p>Consider using <a href="https://desktop.turbowarp.org/">TurboWarp Desktop</a> if you are afraid of remote JavaScript.</p></div></div></noscript><div class="splash-screen spash-waiting-for-js" hidden><div class="splash-spinner"></div><div class="splash-error-title" hidden>Something went wrong. <a href="https://scratch.mit.edu/users/GarboMuffin/#comments" target="_blank" rel="noreferrer">Please report</a> with the information below.</div><div class="splash-errors" hidden></div><button class="splash-reset" hidden>Click here to reset caches (can fix some errors)</button></div><script>(function () {
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div class="splash-screen">
+        <div>
+          <h1>AstraEditor requires JavaScript</h1>
+          <p>Consider using <a href="https://desktop.turbowarp.org/">TurboWarp Desktop</a> if you are afraid of remote JavaScript.</p>
+        </div>
+      </div>
+    </noscript>
+
+    <div class="splash-screen spash-waiting-for-js" hidden>
+      <div class="splash-spinner"></div>
+
+      <div class="splash-error-title" hidden>Something went wrong. <a href="https://scratch.mit.edu/users/GarboMuffin/#comments" target="_blank" rel="noreferrer">Please report</a> with the information below.</div>
+      <div class="splash-errors" hidden></div>
+      <button class="splash-reset" hidden>Click here to reset caches (can fix some errors)</button>
+    </div>
+
+    <script>
+      (function () {
         'use strict';
 
         var theme = '';
@@ -120,8 +156,12 @@
         splashReset.onclick = function () {
           splashReset.disabled = true;
           function hardRefresh() {
-            var search = location.search.replace(/[?&]nocache=\d+/, '');
-            location.replace(location.pathname + search + (search ? '&' : '?') + 'nocache=' + Math.floor(Math.random() * 100000));
+            var search = location.search.replace(/[?&]nocache=[\d.]+(?=$|&)/, '');
+            // This is a functional cookie used so that we respond with Clear-Site-Data just once. No tracking.
+            // Can't use nocache parameter to trigger this because people might accidentally bookmark that, and
+            // then we would be clearing their cache on every visit.
+            document.cookie = 'tw_clear_cache_once=1; max-age=60; path=/; samesite=strict; secure';
+            location.replace(location.pathname + search + (search ? '&' : '?') + 'nocache=' + Math.floor(Math.random() * 10000000));
           }
           if ('serviceWorker' in navigator) {
             setTimeout(hardRefresh, 5000);
@@ -142,4 +182,9 @@
           splash.hidden = true;
           window.onerror = null;
         };
-      })();</script><div id="app"></div><script src="js/pentapod/vendors~addon-settings~credits~editor~embed~fullscreen.239d316b4f0e0dae4925.js"></script><script src="js/pentapod/vendors~editor~embed~fullscreen.02053e42a027d52213e0.js"></script><script src="js/pentapod/addon-settings~addons~editor~fullscreen.06567ea8112d62f93a4e.js"></script><script src="js/pentapod/addon-settings~editor~embed~fullscreen.196e38ffcd9d432157ee.js"></script><script src="js/pentapod/editor.c347e0a878533873adc9.js"></script></body></html>
+      })();
+    </script>
+
+    <div id="app"></div>
+  <script src="js/vendors~addon-settings~credits~editor~embed~fullscreen~player.js"></script><script src="js/vendors~editor~embed~fullscreen~player.js"></script><script src="js/addon-settings~addons~editor~fullscreen~player.js"></script><script src="js/addon-settings~editor~embed~fullscreen~player.js"></script><script src="js/editor.js"></script></body>
+</html>
