@@ -1370,6 +1370,25 @@ Blockly.Blocks.control_for_each = {
       category: Blockly.Categories.control,
       extensions: ["colours_control", "shape_statement"]
     });
+    var a = this.getField("VARIABLE"),
+      b = this.workspace;
+    if (a && b) {
+      for (var c = (b.isFlyout && b.targetWorkspace ? b.targetWorkspace : b).getVariablesOfType(""), d = [], e = 0; e < c.length; e++) {
+        var f = c[e];
+        f && "string" === typeof f.name && f.name.trim() && d.push(f);
+      }
+      if (0 < d.length) {
+        d.sort(Blockly.VariableModel.compareByName);
+        c = d[0];
+        b = Blockly.Variables.getOrCreateVariablePackage(b, c.getId(), c.name, c.type);
+        Blockly.Events.disable();
+        try {
+          a.setValue(b.getId());
+        } finally {
+          Blockly.Events.enable();
+        }
+      }
+    }
   }
 };
 Blockly.Blocks.control_start_as_clone = {
@@ -3909,7 +3928,7 @@ Blockly.Blocks.sensing_of = {
       message0: Blockly.Msg.SENSING_OF,
       checkboxInFlyout: !0,
       args0: [{
-        type: "input_value",
+        type: "field_dropdown",
         name: "PROPERTY",
         options: [[Blockly.Msg.SENSING_OF_XPOSITION, "x position"], [Blockly.Msg.SENSING_OF_YPOSITION, "y position"], [Blockly.Msg.SENSING_OF_DIRECTION, "direction"], [Blockly.Msg.SENSING_OF_COSTUMENUMBER, "costume #"], [Blockly.Msg.SENSING_OF_COSTUMENAME, "costume name"], [Blockly.Msg.SENSING_OF_SIZE, "size"], [Blockly.Msg.SENSING_OF_VOLUME, "volume"], [Blockly.Msg.SENSING_OF_BACKDROPNUMBER, "backdrop #"], [Blockly.Msg.SENSING_OF_BACKDROPNAME, "backdrop name"]]
       }, {

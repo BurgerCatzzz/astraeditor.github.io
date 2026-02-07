@@ -1900,6 +1900,17 @@ module.exports = __webpack_require__.p + "static/assets/33c4d6d43b39ce5c53ccffbc
 
 /***/ }),
 
+/***/ "./src/playground/credits/AE_images/nangua.jpg":
+/*!*****************************************************!*\
+  !*** ./src/playground/credits/AE_images/nangua.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/assets/76f16f2d28f27fc6a0e60d90b4f990f4.jpg";
+
+/***/ }),
+
 /***/ "./src/playground/credits/AE_images/np.jpg":
 /*!*************************************************!*\
   !*** ./src/playground/credits/AE_images/np.jpg ***!
@@ -1934,6 +1945,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AE_images_msw_jpg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_AE_images_msw_jpg__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _AE_images_cat_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AE_images/cat.jpg */ "./src/playground/credits/AE_images/cat.jpg");
 /* harmony import */ var _AE_images_cat_jpg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_AE_images_cat_jpg__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _AE_images_nangua_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AE_images/nangua.jpg */ "./src/playground/credits/AE_images/nangua.jpg");
+/* harmony import */ var _AE_images_nangua_jpg__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_AE_images_nangua_jpg__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
@@ -1980,6 +1994,10 @@ const website = [{
   image: _AE_images_cat_jpg__WEBPACK_IMPORTED_MODULE_6___default.a,
   text: "世界第一可爱傲娇汉堡小猫",
   href: ""
+}, {
+  image: _AE_images_nangua_jpg__WEBPACK_IMPORTED_MODULE_7___default.a,
+  text: "Itz_NanGua",
+  href: "https://github.com/NanGua-QWQ"
 }];
 /* harmony default export */ __webpack_exports__["default"] = ({
   contributors: shuffle(contributors),

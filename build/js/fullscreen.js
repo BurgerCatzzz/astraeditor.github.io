@@ -14228,6 +14228,9 @@ class LoaderComponent extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
     this.messageEl = message;
   }
   render() {
+    const circle1Id = _loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.circle_1 || _loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.circle1 || 'circle_1';
+    const circle2Id = _loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.circle_2 || _loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.circle2 || 'circle_2';
+    const circle3Id = _loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.circle_3 || _loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.circle3 || 'circle_3';
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(_loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.background, {
         [_loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.fullscreen]: this.props.isFullScreen
@@ -14240,13 +14243,13 @@ class LoaderComponent extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       className: _loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.logoLoader
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: _loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.circle,
-      id: "circle_1"
+      id: circle1Id
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: _loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.circle,
-      id: "circle_2"
+      id: circle2Id
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: _loader_css__WEBPACK_IMPORTED_MODULE_6___default.a.circle,
-      id: "circle_3"
+      id: circle3Id
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       style: {
         textAlign: "right"
@@ -25213,20 +25216,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _spinner_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_spinner_css__WEBPACK_IMPORTED_MODULE_1__);
 
 
-const Loading = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  className: _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.container
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  className: _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.logo
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  className: _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle,
-  id: "circle_1"
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  className: _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle,
-  id: "circle_2"
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  className: _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle,
-  id: "circle_3"
-})));
+const Loading = () => {
+  const circle1Id = _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle_1 || _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle1 || 'circle_1';
+  const circle2Id = _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle_2 || _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle2 || 'circle_2';
+  const circle3Id = _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle_3 || _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle3 || 'circle_3';
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.container
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.logo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle,
+    id: circle1Id
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle,
+    id: circle2Id
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _spinner_css__WEBPACK_IMPORTED_MODULE_1___default.a.circle,
+    id: circle3Id
+  })));
+};
 /* harmony default export */ __webpack_exports__["default"] = (Loading);
 
 /***/ }),
@@ -45954,7 +45962,7 @@ const control = function control(isInitialSetup, isStage, targetId, colors) {
   // Note: the category's secondaryColour matches up with the blocks' tertiary color, both used for border color.
   const hiddenBlocksTitle = translate('HIDDENBLOCKS_TITLE', 'Hidden Blocks of Scratch');
   const hiddenBlocksIntro = translate('HIDDENBLOCKS_INTRO', 'They are not displayed by default');
-  return "\n    <category\n        name=\"%{BKY_CATEGORY_CONTROL}\"\n        id=\"control\"\n        colour=\"".concat(colors.primary, "\"\n        secondaryColour=\"").concat(colors.tertiary, "\">\n        <block type=\"control_wait\">\n            <value name=\"DURATION\">\n                <shadow type=\"math_positive_number\">\n                    <field name=\"NUM\">1</field>\n                </shadow>\n            </value>\n        </block>\n        ").concat(blockSeparator, "\n        <block type=\"control_repeat\">\n            <value name=\"TIMES\">\n                <shadow type=\"math_whole_number\">\n                    <field name=\"NUM\">10</field>\n                </shadow>\n            </value>\n        </block>\n        <block id=\"forever\" type=\"control_forever\"/>\n        ").concat(blockSeparator, "\n        <block type=\"control_if\"/>\n        <block type=\"control_if_else\"/>\n        <block id=\"wait_until\" type=\"control_wait_until\"/>\n        <block id=\"repeat_until\" type=\"control_repeat_until\"/>\n        <block id=\"while\" type=\"control_while\"/>\n        ").concat(blockSeparator, "\n        <block type=\"control_stop\"/>\n        ").concat(blockSeparator, "\n        ").concat(isStage ? "\n            <block type=\"control_create_clone_of\">\n                <value name=\"CLONE_OPTION\">\n                    <shadow type=\"control_create_clone_of_menu\"/>\n                </value>\n            </block>\n        " : "\n            <block type=\"control_start_as_clone\"/>\n            <block type=\"control_create_clone_of\">\n                <value name=\"CLONE_OPTION\">\n                    <shadow type=\"control_create_clone_of_menu\"/>\n                </value>\n            </block>\n            <block type=\"control_delete_this_clone\"/>\n        ", "\n        ").concat(categorySeparator, "\n        ").concat(blockSeparator, "\n        <label text=\"").concat(hiddenBlocksTitle, "\"></label>\n        <label text=\"").concat(hiddenBlocksIntro, "\"></label>\n        <block type=\"control_for_each\">\n            ///\u6C14\u6B7B\u6211\u4E86\u8FD9\u4E2A\"i\"\u662F\u54EA\u91CC\u8E66\u51FA\u6765\u7684\uFF0C\u6211\u7ED9\u4F60\u6539\u6210\u7A7A\u767D\u4E86\u4E0D\u7528\u8C22\n            <field name=\"VARIABLE\"> </field>\n            <value name=\"VALUE\"><shadow type=\"math_whole_number\"><field name=\"NUM\">10</field></shadow></value>\n        </block>\n        ").concat(blockSeparator, "\n        <block id=\"control_get_counter\" type=\"control_get_counter\"/>\n        <block type=\"control_incr_counter\"/>\n        <block type=\"control_clear_counter\"/>\n\n    </category>\n    ");
+  return "\n    <category\n        name=\"%{BKY_CATEGORY_CONTROL}\"\n        id=\"control\"\n        colour=\"".concat(colors.primary, "\"\n        secondaryColour=\"").concat(colors.tertiary, "\">\n        <block type=\"control_wait\">\n            <value name=\"DURATION\">\n                <shadow type=\"math_positive_number\">\n                    <field name=\"NUM\">1</field>\n                </shadow>\n            </value>\n        </block>\n        ").concat(blockSeparator, "\n        <block type=\"control_repeat\">\n            <value name=\"TIMES\">\n                <shadow type=\"math_whole_number\">\n                    <field name=\"NUM\">10</field>\n                </shadow>\n            </value>\n        </block>\n        <block id=\"forever\" type=\"control_forever\"/>\n        ").concat(blockSeparator, "\n        <block type=\"control_if\"/>\n        <block type=\"control_if_else\"/>\n        <block id=\"wait_until\" type=\"control_wait_until\"/>\n        <block id=\"repeat_until\" type=\"control_repeat_until\"/>\n        <block id=\"while\" type=\"control_while\"/>\n        ").concat(blockSeparator, "\n        <block type=\"control_stop\"/>\n        ").concat(blockSeparator, "\n        ").concat(isStage ? "\n            <block type=\"control_create_clone_of\">\n                <value name=\"CLONE_OPTION\">\n                    <shadow type=\"control_create_clone_of_menu\"/>\n                </value>\n            </block>\n        " : "\n            <block type=\"control_start_as_clone\"/>\n            <block type=\"control_create_clone_of\">\n                <value name=\"CLONE_OPTION\">\n                    <shadow type=\"control_create_clone_of_menu\"/>\n                </value>\n            </block>\n            <block type=\"control_delete_this_clone\"/>\n        ", "\n        ").concat(categorySeparator, "\n        ").concat(blockSeparator, "\n        <label text=\"").concat(hiddenBlocksTitle, "\"></label>\n        <label text=\"").concat(hiddenBlocksIntro, "\"></label>\n        <block type=\"control_for_each\">\n            <value name=\"VALUE\"><shadow type=\"math_whole_number\"><field name=\"NUM\">10</field></shadow></value>\n        </block>\n        ").concat(blockSeparator, "\n        <block id=\"control_get_counter\" type=\"control_get_counter\"/>\n        <block type=\"control_incr_counter\"/>\n        <block type=\"control_clear_counter\"/>\n\n    </category>\n    ");
 };
 const sensing = function sensing(isInitialSetup, isStage, targetId, colors) {
   const name = translate('SENSING_ASK_TEXT', 'What\'s your name?');
