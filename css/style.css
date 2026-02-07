@@ -2,6 +2,16 @@
     background-color: #111;
 }
 
+/* 全局响应式设计规则 */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* 蓝图背景效果 */
 body {
     position: relative;
@@ -58,163 +68,98 @@ body {
 }
 
 @keyframes blink-caret {
-
     from,
     to {
         border-color: transparent
     }
-
     50% {
         border-color: #0099ff
     }
 }
 
 .tab {
-
     display: flex;
-
     position: fixed;
-
     background-color: #222;
-
     width: 100%;
-
     margin: 0;
-
     left: 0;
-
     top: 0;
-
     height: 50px;
-
     padding: 10px 0;
-
     justify-content: space-between;
-
     z-index: 1000;
-
     animation: slideDown 0.6s ease-out;
-
 }
 
 
 
 @keyframes slideDown {
-
     from {
-
         transform: translateY(-100%);
-
         opacity: 0;
-
     }
 
     to {
-
         transform: translateY(0);
-
         opacity: 1;
-
     }
-
 }
 
-
-
 /* 页面容器 */
-
 .page {
-
     min-height: calc(100vh - 50px);
-
     padding-top: 50px;
-
     animation: fadeIn 0.4s ease-out;
-
+    width: 100%;
+    overflow-x: hidden; /* 防止水平滚动条 */
 }
 
 
 
 @keyframes fadeIn {
-
     from {
-
         opacity: 0;
-
         transform: translateY(10px);
-
     }
 
     to {
-
         opacity: 1;
-
         transform: translateY(0);
-
     }
 
 }
 
-
-
 /* 页面标题 */
-
 .page-title {
-
     color: #fff;
-
     font-size: 48px;
-
     font-weight: bold;
-
     text-align: center;
-
     margin: 60px 0 30px;
-
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 
 }
 
-
-
 .page-placeholder {
-
     color: #aaa;
-
     font-size: 24px;
-
     text-align: center;
-
     padding: 40px;
-
 }
-
-
 
 /* 日志页面 */
-
 .changelog-container {
-
     max-width: 800px;
-
     margin: 0 auto;
-
     padding: 20px;
-
 }
 
-
-
 /* 下载页面 */
-
 .download-container {
-
     max-width: 800px;
-
     margin: 0 auto;
-
     padding: 20px;
-
 }
 
 
@@ -222,20 +167,16 @@ body {
 /* 仓库页面 */
 
 .repository-container {
-
     max-width: 800px;
-
     margin: 0 auto;
-
     padding: 20px;
-
 }
 
 #tabLogo {
     height: 40px;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .tabButtonTab {
@@ -273,12 +214,15 @@ body {
 .LogoTitle {
     margin-top: 160px;
     width: 400px;
+    max-width: 90%;
+    height: auto;
 }
 
 
 
 .TitleShowPho {
     width: 70%;
+    max-width: 100%;
     height: auto;
     position: relative;
     left: 0;
@@ -290,6 +234,7 @@ body {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     border-radius: 12px;
     will-change: transform;
+    object-fit: contain;
 }
 
 .TitleShowPho:hover {
@@ -301,6 +246,7 @@ body {
     position: absolute;
     perspective: 1200px;
     width: 80%;
+    max-width: 100%;
     height: 600px;
     display: flex;
     justify-content: center;
@@ -364,6 +310,8 @@ body {
     overflow: hidden;
     position: relative;
     margin-bottom: 10px;
+    word-wrap: break-word; /* 防止文字溢出 */
+    word-break: break-word; /* 防止长单词溢出 */
 }
 
 .featureCard:hover {
@@ -420,6 +368,7 @@ body {
     margin-top: 20px;
     border-radius: 10px;
     transition: filter 0.3s ease;
+    min-height: 44px; /* 确保触摸目标足够大 */
 }
 
 .OnlineButton {
@@ -498,9 +447,8 @@ body {
     margin-top: 100px;
     background-color: #222;
     left: 0;
-    bottom: 0;
-    height: 100px;
-    width: auto;
+    width: 100%;
+    min-height: 100px;
     top: 0;
 }
 
@@ -557,13 +505,381 @@ small {
     background-color: #222;
     left: 0;
     bottom: 0;
-    width: auto;
+    width: 100%;
     padding: 10px;
-    top: 0;
     color: #eee;
     display: flex;
     justify-content: center;
 }
 .footerT{
     font-size: small;
+}
+
+@media (max-width: 1200px) {
+    .LogoTitle {
+        width: 300px;
+    }
+
+    .featureCard {
+        width: 40%;
+    }
+
+    .featureCard:hover {
+        width: 40%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .LogoTitle {
+        width: 250px;
+    }
+
+    .slogan {
+        font-size: 50px;
+    }
+
+    .featureCards {
+        padding: 0 20px;
+    }
+
+    .featureCard {
+        width: 45%;
+    }
+
+    .featureCard:hover {
+        width: 45%;
+    }
+
+    .titleF {
+        font-size: x-large;
+        margin-right: 20px;
+    }
+
+    .titleFintor {
+        margin-right: 40px;
+    }
+
+    .updateTL {
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    #tabLogo {
+        height: 30px;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 20px;
+    }
+
+    .tabButtonTab {
+        margin-right: 20px;
+    }
+
+    .tabButton {
+        width: auto;
+        min-width: 60px;
+        font-size: 14px;
+        padding: 0 8px;
+    }
+    //Fuck 换行给我等着
+    .slogan {
+        font-size: 36px;
+        width: 100%;
+        text-align: center;
+        margin: 20px 0;
+        word-wrap: break-word;
+    }
+
+    .slogan span {
+        display: inline-block;
+    }
+
+    .LogoTitle {
+        width: 200px;
+        margin-top: 100px;
+    }
+
+    .p3d {
+        width: 90%;
+        margin-top: 100px;
+        height: 400px;
+    }
+
+    .TitleShowPho {
+        width: 100%;
+        height: auto;
+    }
+
+    .titleShow {
+        padding-top: 50px;
+        height: 700px;
+    }
+
+    .OnlineButton,
+    .DesktopButton {
+        width: 100px;
+        font-size: 16px;
+    }
+
+    .features {
+        height: auto;
+        min-height: 600px;
+    }
+
+    .backgroundF {
+        height: 700px;
+        margin-top: -40px;
+    }
+
+    .featureCards {
+        align-items: center;
+    }
+
+    .featureCard {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .featureCard:hover {
+        width: 80%;
+        height: auto;
+        min-height: 200px;
+    }
+
+    .featureTitle {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .featureCard:hover .featureTitle {
+        top: auto;
+        transform: none;
+    }
+
+    .featureDesc {
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .titleF {
+        font-size: large;
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    .titleFintor {
+        font-size: medium;
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    .Update {
+        margin-top: 100px;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .updateT {
+        font-size: x-large;
+    }
+
+    .updateTIn {
+        font-size: medium;
+    }
+
+    .updateTL {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .ubg {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        margin-top: -100px;
+    }
+
+    .end {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .endlogo {
+        width: 150px;
+    }
+
+    .link {
+        margin-top: 20px;
+    }
+
+    small {
+        justify-content: center;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab {
+        padding: 5px 0;
+        height: 45px;
+    }
+
+    .tabButtonTab {
+        margin-right: 10px;
+    }
+
+    .tabButton {
+        min-width: 50px;
+        font-size: 12px;
+        padding: 0 5px;
+        width: auto;
+    }
+
+    .slogan {
+        font-size: 24px;
+        line-height: 1.4;
+        text-shadow: 5px 5px 10px #111; /* 在小屏幕上减小阴影 */
+    }
+
+    .LogoTitle {
+        width: 150px;
+        margin-top: 60px;
+    }
+
+    .p3d {
+        margin-top: 80px;
+        height: 300px;
+    }
+
+    .titleShow {
+        padding-top: 30px;
+        height: 600px;
+        padding-bottom: 20px;
+    }
+
+    .OnlineButton,
+    .DesktopButton {
+        width: 120px;
+        height: 35px;
+        font-size: 14px;
+        margin: 5px;
+    }
+
+    .featureCard {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .featureCard:hover {
+        width: 90%;
+        height: auto;
+        min-height: 150px;
+    }
+
+    .titleF {
+        font-size: medium;
+        padding: 0 10px;
+    }
+
+    .titleFintor {
+        font-size: small;
+        padding: 0 10px;
+    }
+
+    .backgroundF {
+        height: 600px;
+        margin-top: -20px;
+    }
+
+    .features {
+        min-height: 500px;
+    }
+
+    .page-title {
+        font-size: 28px; /* 进一步减小标题字体 */
+        margin: 40px 0 20px;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .page-placeholder {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .updateT {
+        font-size: large;
+    }
+
+    .updateTIn {
+        font-size: small;
+    }
+
+    .updateTL {
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 14px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .ubg {
+        margin-top: -80px;
+    }
+
+    .end {
+        padding: 30px 15px;
+    }
+
+    .endlogo {
+        width: 120px;
+    }
+
+    .endby {
+        font-size: medium;
+    }
+
+    .link {
+        font-size: medium;
+    }
+
+    .introend {
+        font-size: 11px; /* 进一步减小文字 */
+        line-height: 1.5;
+    }
+
+    .footerT {
+        font-size: 9px; /* 进一步减小 */
+    }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 320px) {
+    .slogan {
+        font-size: 20px;
+    }
+    
+    .LogoTitle {
+        width: 120px;
+    }
+    
+    .OnlineButton,
+    .DesktopButton {
+        width: 100px;
+        font-size: 12px;
+    }
+    
+    .featureCard {
+        width: 95%;
+    }
+    
+    .featureCard:hover {
+        width: 95%;
+    }
 }
