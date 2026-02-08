@@ -12,10 +12,7 @@
 <body>
 	<div class="blueprint-bg"></div>
 	<div class="tab">
-		<img 
-			src="./fulllogo.png" 
-			alt="logo" 
-			id="tabLogo">
+		<img src="./fulllogo.png" alt="logo" id="tabLogo">
 		<div class="tabButtonTab">
 			<button type="button" class="tabButton" data-page="home">首页</button>
 			<button type="button" class="tabButton" data-page="changelog">日志</button>
@@ -47,8 +44,7 @@
 						}
 					</script>
 					<button type="button" class="OnlineButton" onclick="onlinkLink()">在线使用</button>
-					<button type="button" class="DesktopButton"
-						onclick="onlinkDesktop()">下载桌面端</button>
+					<button type="button" class="DesktopButton" onclick="onlinkDesktop()">下载桌面端</button>
 				</div>
 			</div>
 
@@ -109,19 +105,82 @@
 				</div>
 			</div>
 			<div class="Update">
-				<span class="updateT">持续更新</span>
-				<span class="updateTIn">AstraEditor在持续更新，未来将会加入更多功能。</span>
-				<ul class="updateTL">
+				<div class="ubgd">
+					<img src="./updatelist.jpeg" alt="updateBG" class="ubg">
+				</div>
+				<div class="UpdateC">
+					<span class="updateT">更新进行时</span>
+					<span class="updateTIn">AstraEditor在持续更新，未来将会加入更多功能。<br />我们暂不透露未来的更新计划。以下使我们为TurboWarp增加的新功能：
+					</span>
+					<pre class="updatelist">
+插件：
+    [/] 调试器（含新标签页）
+            |- 改为可拉伸
+            |- 增加“变量”标签页
+            |- 适配主题色
+    [+] MD注释编辑器
+    [+] SPA简易作品分析器
+    [+] 隐藏工具栏
+    [+] 显示FPS
+    [+] 拖动调整工具箱分类(来自PMOD)
+    [+] 固定积木(来自PMOD)
+功能：
+    [+] 自定义主题色
+    [+] README注释显示
+    [+] 扩展编辑器
+            |- 积木预览
+            |- 实时加载
+    [+] 扩展管理器
+            |- 删除扩展
+            |    |- 删除作品里的扩展积木
+            |- 预览扩展
+            |- 导出扩展
+    [+] 跳过自定义扩展警告
+    [+] 工具
+         |- 导出项目图片
+                |- 转换格式为PNG
+    [+] VSCODE 布局
+    [+] 打开非Scratch官网项目URL
+    [/] 造型编辑
+           |- 扩展边界
+           |- 布尔运算
+           |    |- 结合
+           |    |- 相交
+           |    |- 剪除
+           |    |- 拆分
+           |- 圆角矩形
+           |    |- 修改半径
+           |-拖拽体验
+    [+] 隐藏的积木
+           |- ForEach
+           |- 计数器
+           |- 当该角色遇到xxx
+    [+] 错误积木
+    [/] 让更多积木值可显示在舞台上
+           |- 碰到xxx
+           |- 碰到颜色xxx
+           |- 颜色xxx碰到颜色xxx
+           |- 到xxx的距离
+           |- 按下xx键
+    [/] 让显示在舞台上的积木值的背景颜色跟随亮暗模式改变
+    [/] 跟进TW增加“在线”积木
+    [/] 为“在作品中保留设置”的文本加入翻译
+    [/] 可拉伸的 Flyout
+修复：
+    自定义扩展的TextArea编码问题
+
+
+					</pre>
+				</div>
+				<!-- <ul class="updateTL">
 					<li>作品分析</li>
 					<li>更棒的造型编辑</li>
 					<li>更棒的声音编辑</li>
 					<li>渲染优化</li>
 					<li>造型声音的拖拽</li>
 					<li>联机？</li>
-				</ul>
-				<div class="ubgd">
-					<img src="./updatelist.jpeg" alt="updateBG" class="ubg">
-				</div>
+				</ul> -->
+
 			</div>
 		</div>
 
@@ -129,7 +188,40 @@
 		<div class="page" id="page-changelog" data-page="changelog" style="display: none;">
 			<div class="changelog-container">
 				<h1 class="page-title">更新日志</h1>
-				<p class="page-placeholder">还未发布...</p>
+				<div class="page-updateList">
+					<div>
+						<div class="page-updateVersion">v1.0.1</div>
+						<div class="page-updateDate">2026/2/9</div>
+						<ul>
+							<li>修复关于扩展编辑器资源丢失的问题</li>
+							<li> 修复“上传扩展”无法打开的问题</li>
+							<li> 修正部分情况下关于界面的翻译问题</li>
+						</ul>
+					</div>
+					<div>
+						<div class="page-updateVersion">v1.0.0</div>
+						<div class="page-updateDate">2026/2/8</div>
+						<ul>
+							<li>自定义主题颜色</li>
+							<li> 完整可用的“README”功能</li>
+							<li> 制作“AstraEditor Settings”（管理新功能）</li>
+							<li> 制作“一次性同意自定义扩展请求”</li>
+							<li> 修复“自定义扩展的TextArea编码问题”</li>
+							<li> 优化“积木错误的举措”</li>
+							<li> 修复插件"整理＋"（开发者工具）的翻译缺失</li>
+							<li> “扩展管理器”＆扩展预览</li>
+							<li> 修改默认项目 (随机的Title！)</li>
+							<li> 更多新插件：调试器（含新标签页）、MD注释编辑器、SPA简易作品分析器、隐藏工具栏、显示FPS、拖动调整工具箱分类(来自PMOD)、固定积木(来自PMOD)</li>
+							<li> 隐藏的积木</li>
+							<li> 错误积木</li>
+							<li> 让更多积木值可显示在舞台上</li>
+							<li> 让显示在舞台上的积木值的背景颜色跟随亮暗模式改变</li>
+							<li> 为“在作品中保留设置”的文本加入翻译</li>
+							<li> 可拉伸的 Flyout</li>
+							<li> 造型编辑-布尔运算</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -158,7 +250,7 @@
 				<a class="iconLinkB" href="https://space.bilibili.com/3691007061264515">
 					<img class="iconLink" src="./bilibili.svg" alt="bilibili">
 				</a>
-				<a class="iconLinkB" href="https://qm.qq.com/q/u2GpAwB5o6">
+				<a class="iconLinkB" href="https://qm.qq.com/q/Jiya5xBIs2">
 					<img class="iconLink" src="./qq.png" alt="qq">
 				</a>
 			</div>
