@@ -12,7 +12,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "div[class=\"scratchCategoryMenuRow\"][data-dragger=\"true\"] > div {\n    background: white;\n    font-size: 0.65rem;\n}\n\n[theme=\"dark\"] div[class=\"scratchCategoryMenuRow\"][data-dragger=\"true\"] > div {\n    background: var(--ui-secondary);\n}", ""]);
+exports.push([module.i, "div[class=\"scratchCategoryMenuRow\"][data-dragger=\"true\"] > div {\n    background: var(--ui-secondary);\n    font-size: 0.65rem;\n}\n\n[theme=\"dark\"] div[class=\"scratchCategoryMenuRow\"][data-dragger=\"true\"] > div {\n    background: var(--ui-secondary);\n}", ""]);
 
 // exports
 

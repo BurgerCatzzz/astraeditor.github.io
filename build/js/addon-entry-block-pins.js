@@ -681,7 +681,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-    const original = "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"#AFAFAF\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M19 21L12 16L5 21V5C5 3.89543 5.89543 3 7 3H17C18.1046 3 19 3.89543 19 5V21Z\" stroke=\"#AFAFAF\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n</svg>";
+    const original = "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"#855cd6\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M19 21L12 16L5 21V5C5 3.89543 5.89543 3 7 3H17C18.1046 3 19 3.89543 19 5V21Z\" stroke=\"#855cd6\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n</svg>\n";
 
     const getSRC = () => {
         const recolored = typeof Recolor === 'object' ? (

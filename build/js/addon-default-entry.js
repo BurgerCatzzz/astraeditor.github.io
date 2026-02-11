@@ -3033,7 +3033,12 @@ __webpack_require__.r(__webpack_exports__);
     console
   } = _ref;
   const Blockly = await addon.tab.traps.getBlockly();
-  const VSCodeLayout = JSON.parse(localStorage.getItem('AESettings')).EnableVSCodeLayout;
+  let VSCodeLayout;
+  try {
+    VSCodeLayout = JSON.parse(localStorage.getItem('AESettings')).EnableVSCodeLayout;
+  } catch (e) {
+    VSCodeLayout = false;
+  }
   class FindBar {
     constructor() {
       this.utils = new _blockly_Utils_js__WEBPACK_IMPORTED_MODULE_2__["default"](addon);

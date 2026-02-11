@@ -2636,7 +2636,9 @@ __webpack_require__.r(__webpack_exports__);
   "show-fps": () => __webpack_require__.e(/*! import() | addon-entry-tw-show-fps */ "addon-entry-tw-show-fps").then(__webpack_require__.bind(null, /*! ../addons/show-fps/_runtime_entry.js */ "./src/addons/addons/show-fps/_runtime_entry.js")),
   "toolbox-category-drag": () => __webpack_require__.e(/*! import() | addon-entry-toolbox-category-drag */ "addon-entry-toolbox-category-drag").then(__webpack_require__.bind(null, /*! ../addons/toolbox-category-drag/_runtime_entry.js */ "./src/addons/addons/toolbox-category-drag/_runtime_entry.js")),
   "block-pins": () => __webpack_require__.e(/*! import() | addon-entry-block-pins */ "addon-entry-block-pins").then(__webpack_require__.bind(null, /*! ../addons/block-pins/_runtime_entry.js */ "./src/addons/addons/block-pins/_runtime_entry.js")),
-  "bookmark": () => __webpack_require__.e(/*! import() | addon-entry-block-pins */ "addon-entry-block-pins").then(__webpack_require__.bind(null, /*! ../addons/bookmark/_runtime_entry.js */ "./src/addons/addons/bookmark/_runtime_entry.js"))
+  "bookmark": () => __webpack_require__.e(/*! import() | addon-entry-block-pins */ "addon-entry-block-pins").then(__webpack_require__.bind(null, /*! ../addons/bookmark/_runtime_entry.js */ "./src/addons/addons/bookmark/_runtime_entry.js")),
+  "Terminal": () => __webpack_require__.e(/*! import() | addon-entry-terminal */ "addon-entry-terminal").then(__webpack_require__.bind(null, /*! ../addons/Terminal/_runtime_entry.js */ "./src/addons/addons/Terminal/_runtime_entry.js")),
+  "my-blocks-plus": () => __webpack_require__.e(/*! import() | addon-entry-my-blocks-plus */ "addon-entry-my-blocks-plus").then(__webpack_require__.bind(null, /*! ../addons/my-blocks-plus/_runtime_entry.js */ "./src/addons/addons/my-blocks-plus/_runtime_entry.js"))
 });
 
 /***/ }),
